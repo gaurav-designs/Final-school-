@@ -57,6 +57,77 @@ border-radius:8px;
 color:white;
 cursor:pointer;
 }
+.fees-section{
+padding:70px 20px;
+background:linear-gradient(135deg,#f97316,#ec4899);
+text-align:center;
+color:white;
+}
+
+.fees-title{
+font-size:32px;
+margin-bottom:30px;
+}
+
+.fee-table{
+max-width:700px;
+margin:auto;
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th,td{
+padding:12px;
+border-bottom:1px solid #ddd;
+}
+
+th{
+background:#2563eb;
+color:white;
+}
+
+td{
+color:#333;
+}
+
+.fees-section{
+padding:70px 20px;
+background:linear-gradient(135deg,#f97316,#ec4899);
+text-align:center;
+color:white;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+}
+
+.fee-table{
+max-width:600px;
+margin:auto;
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+height:auto;
+}
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th,td{
+padding:12px;
+border-bottom:1px solid #ddd;
+text-align:center;
+}
+
 .facilities-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
@@ -90,6 +161,7 @@ padding:0 15px 20px;
 color:#555;
 }
 *{margin:0;padding:0;box-sizing:border-box}
+
 .facility-container{
 display:flex;
 flex-direction:column;
@@ -414,6 +486,7 @@ padding:20px;
 <a href="#gallery" onclick="closeMenu()">Gallery</a>
 <a href="#admission" onclick="closeMenu()">Admission</a>
 <a href="#admission" onclick="closeMenu()">Admission</a>
+<a href="#fees" onclick="closeMenu()">Fee Structure</a>
 
 </div>
 
@@ -559,6 +632,81 @@ padding:20px;
 </div>
 </section>
 
+<!-- ===== Fee Structure ===== -->
+
+<section id="fees" class="fees-section">
+
+<h2 class="fees-title">School Fee Structure</h2>
+
+<div class="fee-table">
+
+<table>
+
+<tr>
+<th>Class</th>
+<th>Admission Fee</th>
+<th>Monthly Fee</th>
+</tr>
+
+<tr>
+<td>Nursery</td>
+<td>₹5000</td>
+<td>₹1500</td>
+</tr>
+
+<tr>
+<td>KG</td>
+<td>₹5000</td>
+<td>₹1500</td>
+</tr>
+
+<tr>
+<td>Class 1</td>
+<td>₹6000</td>
+<td>₹1800</td>
+</tr>
+
+<tr>
+<td>Class 2</td>
+<td>₹6000</td>
+<td>₹1800</td>
+</tr>
+
+<tr>
+<td>Class 3</td>
+<td>₹7000</td>
+<td>₹2000</td>
+</tr>
+
+<tr>
+<td>Class 4</td>
+<td>₹7000</td>
+<td>₹2000</td>
+</tr>
+
+<tr>
+<td>Class 5</td>
+<td>₹8000</td>
+<td>₹2200</td>
+</tr>
+
+<tr>
+<td>Class 6-8</td>
+<td>₹9000</td>
+<td>₹2500</td>
+</tr>
+
+<tr>
+<td>Class 9-10</td>
+<td>₹10000</td>
+<td>₹3000</td>
+</tr>
+
+</table>
+
+</div>
+
+</section>
 
 <!-- ===== Admission Section ===== -->
 
