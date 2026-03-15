@@ -3,11 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ST JOHN'S HIGH SCHOOL</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+
+.hidden-section{
+display:none;
+padding:60px 20px;
+text-align:center;
+background:white;
+}
+
 .facilities-section{
 padding:60px 20px;
 background:#f1f5f9;
@@ -91,6 +98,41 @@ border-bottom:1px solid #ddd;
 th{
 background:#2563eb;
 color:white;
+}
+.about-section{
+padding:60px 20px;
+text-align:center;
+background:#ffffff;
+}
+
+.about-title{
+font-size:34px;
+margin-bottom:15px;
+color:#1e293b;
+}
+
+.about-text{
+max-width:700px;
+margin:auto;
+font-size:18px;
+color:#555;
+line-height:1.6;
+}
+
+#fees{
+background:linear-gradient(135deg,#f97316,#ec4899);
+padding:70px 20px;
+text-align:center;
+color:white;
+}
+
+#fees table{
+background:white;
+max-width:700px;
+margin:auto;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 15px 40px rgba(0,0,0,0.25);
 }
 
 td{
@@ -239,37 +281,34 @@ body{
 font-family:Poppins;
 background:linear-gradient(120deg,#f6f9fc,#eef2ff);
 }
-.teachers-section{
-padding:70px 20px;
-background:linear-gradient(135deg,#6366f1,#9333ea,#ec4899);
-color:white;
-text-align:center;
-}
-
-.teacher-title{
-font-size:32px;
-margin-bottom:40px;
+.teacher-slider{
+overflow:hidden;
+width:100%;
 }
 
 .teacher-container{
 display:flex;
-flex-wrap:wrap;
-justify-content:center;
 gap:30px;
+width:max-content;
+animation: teacherscroll 10s linear infinite;
 }
 
 .teacher-card{
+min-width:250px;
 background:white;
 color:#111;
-width:250px;
 border-radius:15px;
 padding:20px;
 box-shadow:0 10px 25px rgba(0,0,0,0.2);
-transition:0.3s;
 }
 
-.teacher-card:hover{
-transform:translateY(-10px) scale(1.05);
+@keyframes teacherscroll{
+0%{
+transform:translateX(0);
+}
+100%{
+transform:translateX(-50%);
+}
 }
 
 .teacher-card img{
@@ -329,6 +368,34 @@ transform:translateX(-50%);
 }
 
 /* TOPBAR */
+.topbar{
+display:flex;
+align-items:center;
+justify-content:space-between;
+background:linear-gradient(90deg,#ff512f,#dd2476,#7f00ff);
+padding:15px 20px;
+color:white;
+}
+
+.school-name{
+font-size:22px;
+font-weight:600;
+}
+
+.nav-menu{
+display:flex;
+gap:20px;
+}
+
+.nav-menu a{
+color:white;
+text-decoration:none;
+font-weight:500;
+}
+
+.nav-menu a:hover{
+color:yellow;
+}
 
 .topbar{
 display:flex;
@@ -350,27 +417,49 @@ font-weight:600;
 }
 
 /* SIDEBAR */
-
 .sidebar{
 position:fixed;
-left:-260px;
+left:-270px;
 top:0;
 width:260px;
 height:100%;
-background:#1e293b;
-padding-top:30px;
-transition:.4s;
+background:linear-gradient(180deg,#020617,#1e293b);
+backdrop-filter:blur(10px);
+transition:0.4s;
+z-index:1000;
+box-shadow:5px 0 30px rgba(0,0,0,0.5);
+}
+
+.sidebar-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px;
+color:white;
+font-size:20px;
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.close-btn{
+cursor:pointer;
+font-size:22px;
 }
 
 .sidebar a{
-display:block;
-padding:15px 25px;
-color:white;
+display:flex;
+align-items:center;
+gap:10px;
+padding:16px 25px;
+color:#e2e8f0;
 text-decoration:none;
+font-size:17px;
+transition:.3s;
 }
 
 .sidebar a:hover{
-background:#2563eb;
+background:linear-gradient(90deg,#2563eb,#7c3aed);
+color:white;
+padding-left:35px;
 }
 
 /* HERO */
@@ -473,20 +562,76 @@ color:white;
 text-align:center;
 padding:20px;
 }
+table{
+width:90%;
+margin:auto;
+border-collapse:collapse;
+margin-top:30px;
+}
 
+th,td{
+padding:12px;
+border:1px solid #ddd;
+text-align:center;
+}
+
+th{
+background:#2563eb;
+color:white;
+}
+.teacher-title{
+font-size:38px;
+font-weight:700;
+text-align:center;
+margin:70px 0 40px;
+background:linear-gradient(90deg,#2563eb,#7c3aed,#ec4899);
+-webkit-background-clip:text;
+color:transparent;
+letter-spacing:2px;
+position:relative;
+animation: glow 3s infinite alternate;
+}
+
+.teacher-title::after{
+content:"";
+width:90px;
+height:4px;
+background:linear-gradient(90deg,#2563eb,#ec4899);
+display:block;
+margin:12px auto;
+border-radius:5px;
+}
+
+@keyframes glow{
+from{
+filter:drop-shadow(0 0 5px rgba(124,58,237,0.3));
+}
+to{
+filter:drop-shadow(0 0 15px rgba(236,72,153,0.6));
+}
+}
 </style>
 </head>
 
 <body>
-
+  
 <div class="sidebar" id="sidebar">
 
-<a href="#facilities" onclick="closeMenu()">Facilities</a>
-<a href="#faculty" onclick="closeMenu()">Faculty</a>
-<a href="#gallery" onclick="closeMenu()">Gallery</a>
-<a href="#admission" onclick="closeMenu()">Admission</a>
-<a href="#admission" onclick="closeMenu()">Admission</a>
-<a href="#fees" onclick="closeMenu()">Fee Structure</a>
+<div class="sidebar-header">
+<span>📚 Menu</span>
+<span class="close-btn" onclick="closeMenu()">✕</span>
+</div>
+
+<a href="#facilities" onclick="closeMenu()">🏫 Facilities</a>
+<a href="#faculty" onclick="closeMenu()">👨‍🏫 Faculty</a>
+<a href="#gallery" onclick="closeMenu()">🖼 Gallery</a>
+<a href="#admission" onclick="closeMenu()">📝 Admission</a>
+<a href="#fees" onclick="closeMenu()">💰 Fee Structure</a>
+<a href="#" onclick="showSection('contact')">📞 Contact</a>
+<a href="#" onclick="showSection('notice')">📢 Notice</a>
+<a href="#" onclick="showSection('principal')">👨‍💼 Principal</a>
+
+</div>
 
 </div>
 
@@ -494,7 +639,17 @@ padding:20px;
 
 <div class="menu" onclick="toggleMenu()">☰</div>
 <div class="school-name">ST JOHN'S HIGH SCHOOL</div>
+<script>
 
+function toggleMenu(){
+document.getElementById("sidebar").style.left="0";
+}
+
+function closeMenu(){
+document.getElementById("sidebar").style.left="-260px";
+}
+
+</script>
 </div>
 
 
@@ -504,7 +659,7 @@ padding:20px;
 
 <a href="#admission" class="btn apply">Apply Now</a>
 
-<a href="https://wa.me/919876543210" class="btn whatsapp">WhatsApp</a>
+<a href="https://wa.me/918002683911" class="btn whatsapp">WhatsApp</a>
 
 </section>
 <!-- ===== School Gallery ===== -->
@@ -595,10 +750,10 @@ padding:20px;
 <p>First aid and medical care available in school.</p>
 </div>
 <!-- ===== Teachers Section ===== -->
+<h2 class="teacher-title">Our Expert Teachers</h2>
 
-<section id="teachers" class="teachers-section">
 
-<h2 class="teacher-title">Meet Our Expert Teachers</h2>
+<div class="teacher-slider">
 
 <div class="teacher-container">
 
@@ -606,39 +761,71 @@ padding:20px;
 <img src="teacher1.jpg">
 <h3>Raushan Goswami</h3>
 <p>Mathematics Teacher</p>
-<span>10+ Years Experience</span>
 </div>
 
 <div class="teacher-card">
 <img src="images/teacher2.jpg">
 <h3>Anita Sharma</h3>
 <p>English Teacher</p>
-<span>8+ Years Experience</span>
 </div>
 
 <div class="teacher-card">
 <img src="images/teacher3.jpg">
 <h3>Amit Singh</h3>
 <p>Science Teacher</p>
-<span>12+ Years Experience</span>
 </div>
 
 <div class="teacher-card">
 <img src="images/teacher4.jpg">
 <h3>Neha Verma</h3>
 <p>Computer Teacher</p>
-<span>6+ Years Experience</span>
 </div>
+
+<div>
+  
+  
 </div>
-</section>
+
+<!-- same cards duplicate -->
+
+<div class="teacher-card">
+<img src="teacher1.jpg">
+<h3>Raushan Goswami</h3>
+<p>Mathematics Teacher</p>
+</div>
+
+<div class="teacher-card">
+<img src="images/teacher2.jpg">
+<h3>Anita Sharma</h3>
+<p>English Teacher</p>
+</div>
+
+<div class="teacher-card">
+<img src="images/teacher3.jpg">
+<h3>Amit Singh</h3>
+<p>Science Teacher</p>
+</div>
+
+<div class="teacher-card">
+<img src="images/teacher4.jpg">
+<h3>Neha Verma</h3>
+<p>Computer Teacher</p>
+</div>
+
+
+</div>
+
+<div>
+  
+</div>
+
+</div>
 
 <!-- ===== Fee Structure ===== -->
 
-<section id="fees" class="fees-section">
+<section id="fees" class="section">
 
-<h2 class="fees-title">School Fee Structure</h2>
-
-<div class="fee-table">
+<h2>School Fee Structure</h2>
 
 <table>
 
@@ -704,78 +891,51 @@ padding:20px;
 
 </table>
 
-</div>
+</section>
+<section class="about-section" id="about">
 
+<h2 class="about-title">About Our School</h2>
+
+<p class="about-text">
+ST JOHN'S HIGH SCHOOL provides quality education with modern facilities 
+and experienced teachers. Our mission is to build knowledge, discipline 
+and leadership in every student.
+</p></section>
+
+<section id="contact" class="hidden-section">
+<h2>Contact Us</h2>
+<p>Phone: +91 9876543210</p>
 </section>
 
-<!-- ===== Admission Section ===== -->
-
-<section id="admission" class="admission-section">
-
-<h2 class="admission-title">Student Admission Form</h2>
-
-<form class="admission-form">
-
-<input type="text" placeholder="Student Name" required>
-
-<input type="text" placeholder="Parent Name" required>
-
-<input type="tel" placeholder="Mobile Number" required>
-
-<select required>
-<option>Select Class</option>
-<option>Nursery</option>
-<option>KG</option>
-<option>Class 1</option>
-<option>Class 2</option>
-<option>Class 3</option>
-<option>Class 4</option>
-<option>Class 5</option>
-<option>Class 6</option>
-<option>Class 7</option>
-<option>Class 8</option>
-<option>Class 9</option>
-<option>Class 10</option>
-</select>
-
-<input type="text" placeholder="Address">
-
-<button type="submit">Submit Admission Form</button>
-
-</form>
-
+<section id="notice" class="hidden-section">
+<h2>Notice Board</h2>
+<p>Admissions Open 2026</p>
 </section>
 
-</div>
-
+<section id="principal" class="hidden-section">
+<h2>Principal Message</h2>
+<p>Welcome to our school.</p>
 </section>
-</div>
-
-</section>
-
-<footer>
-
-© Future Star School
-
-</footer>
-
-
 <script>
 
 function toggleMenu(){
-
-let sidebar=document.getElementById("sidebar")
-
-if(sidebar.style.left=="0px"){
-sidebar.style.left="-260px"
-}else{
-sidebar.style.left="0px"
-}
-
+document.getElementById("sidebar").style.left="0";
 }
 
 function closeMenu(){
-document.getElementById("sidebar").style.left="-260px"
+document.getElementById("sidebar").style.left="-260px";
+}
+
+function showSection(id){
+
+document.querySelectorAll("section").forEach(sec=>{
+sec.style.display="none";
+});
+
+document.getElementById(id).style.display="block";
+
+closeMenu();
+
 }
 
 </script>
